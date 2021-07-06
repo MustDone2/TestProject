@@ -1,47 +1,69 @@
+import java.util.Arrays;
+
 public class Main {
-        public static void main(String[] args){
-            int P = CountP();
-            System.out.println(P);
-            System.out.println((P >= 10)&&(P <= 20));
+    public static void main(String[] args) {
 
-            printNumber(5);
-            boolean step = compareNumbers();
-            System.out.println(step);
-
-            printMessage(3,"Hello World!");
-
-
+        //task1
+        int[] array = new int[]{1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        System.out.println(Arrays.toString(array));
+        changeZeroes(array);
+        System.out.println(Arrays.toString(array));
+        //task2
+        int[] a = new int[100];
+        fullArray(a);
+        System.out.println(Arrays.toString(a));
+        //task3
+        int[] b = new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        massive(b);
+        System.out.println(Arrays.toString(b));
+        //task4
+        int[][] arr = new int[3][3];
+        fullDiagonal(arr);
+        //task5
+        line(1, 555);
+    }
+        //Первое задание
+    public static void changeZeroes(int[] inputArray) {
+        for (int i = 0; i < inputArray.length; ++i) {
+            inputArray[i] = inputArray[i] == 1 ? 0 : 1;
         }
 
-        public static int CountP() {
-            int a = 10;
-            int b = 5;
-
-            return (a+b);
-        }
-
-        public static void  printNumber(int number) {
-            if (number >= 0) {
-                System.out.println("Положительное число");
-            } else if (number < 0) {
-                System.out.println("Отрицательное число");
-            } else {
-                System.out.println("Другое число");
-            }
-        }
-
-        public static boolean compareNumbers() {
-            int x = -15;
-            return (x < 0);
-        }
-
-        public static void printMessage(int count, String message) {
-            int counter = 0;
-            while (counter < count) {
-                System.out.println(message);
-                counter++;
-            }
+    }
+        //Второе задание
+    public static void fullArray(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            arr[i] = i + 1;
         }
     }
+        //Третье задание
+    public static void massive(int[] mass) {
+        for (int i = 0; i < mass.length; ++i) {
+            mass[i] = (mass[i] < 6) ? (mass[i] * 2) : mass[i];
+        }
+    }
+        //Четвертое задание
+    public static void fullDiagonal(int[][] square) {
+        for (int i = 0; i < square.length; ++i) {
+            square[i][i] = 1;
+            square[i][square.length - 1 - i] = 1;
+            System.out.println(Arrays.toString(square[i]));
+        }
+    }
+        //Пятое задание
+    public static int line(int len, int initialValue) {
+        int[] cat;
+        cat = new int[len];
+        for (int i = 0; i < cat.length; i++)
+        {
+            cat[i] = initialValue;
+        }
+        System.out.println(Arrays.toString(cat));
+        return len;
+    }
+}
+
+
+
+
 
 
